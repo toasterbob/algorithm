@@ -7,4 +7,4 @@ def choose_best_sum(t, k, ls)
     end
   end
   best_t == 0 ? nil : best_t
-end   
+end
