@@ -12,4 +12,15 @@ die_faces = [1, 2, 3, 4, 5, 6]
 
 roll1 = die_faces.sample
 
-"  hello  ".strip # => "hello" - removes all white space and returns 
+"  hello  ".strip # => "hello" - removes all white space and returns
+
+"hello".gsub(/[aeiou]/, '*') #=> "h*ll*"
+
+def say_hello(name)
+  puts "Hey there, #{name}!"
+end
+
+if $PROGRAM_NAME == __FILE__
+  name = gets.chomp
+  say_hello(name)
+end
