@@ -15,4 +15,4 @@ def dirReduc(arr)
   else
     dirReduc(arr)
   end
-end
+end 
