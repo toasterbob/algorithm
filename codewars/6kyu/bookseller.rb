@@ -1,7 +1,7 @@
 def stockList(listOfArt, listOfCat)
   result = []
   any_results = false
-  
+
   listOfArt.map! { |pair| pair.split(" ") }
   listOfArt.map! { |arr| [arr[0], arr[1].to_i] }
 
@@ -12,5 +12,5 @@ def stockList(listOfArt, listOfCat)
     any_results = true if total > 0
   end
 
-  any_results ? result.join(" - ") : ""
+  any_results ? result.join(" - ") : "" 
 end
