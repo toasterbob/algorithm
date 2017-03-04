@@ -34,9 +34,8 @@ def stockList(listOfArt, listOfCat)
   end
 
   listOfCat.each do |cat|
-    if hash[cat]
-      results << "#{cat} : #{hash[cat]}"
-    end
+    result << "(#{cat} : #{hash[cat]})"
+
   end
   result.join(" - ")
 end
