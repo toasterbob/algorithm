@@ -20,5 +20,15 @@ end
 
 def demovingShift(arr, shift)
     coded = ""
-
+    s = arr.join("")
+    s.chars do |ch|
+      if ch.downcase >= "a" && ch.downcase <= "z"
+        shift = shift % 26
+        shift2 = 26 - shift # reverse position 
+        shift2.times {ch.next!}
+      end
+      coded << ch[-1]
+      shift += 1
+    end
+    coded
 end
