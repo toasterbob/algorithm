@@ -34,8 +34,9 @@ def stockList(listOfArt, listOfCat)
   end
 
   listOfCat.each do |cat|
+    any_results = true if hash[cat]
+    hash[cat] = 0 if hash[cat].nil?
     result << "(#{cat} : #{hash[cat]})"
-
   end
-  result.join(" - ")
+  any_results ? result.join(" - ") : ""
 end
