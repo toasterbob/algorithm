@@ -11,4 +11,4 @@ def stockList(listOfArt, listOfCat)
 
   listOfCat.map! { |cat| "(#{cat} : #{hash[cat]})" }.join(" - ")
 
-end
+end 
