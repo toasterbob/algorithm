@@ -1,8 +1,8 @@
 def stockList(listOfArt, listOfCat)
   result = []
-  listOfArt.map do |pair|
-    pair.split(" ").map { |code, num| [code, num.to_i] }
-  end
+  listOfArt.map! { |pair| pair.split(" ") }
+
+  p listOfArt
   listOfCat.each do |cat|
     total = 0
     listOfArt.each {|arr| total += arr[1] if arr[0][0] == cat}
