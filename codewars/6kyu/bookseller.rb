@@ -1,6 +1,7 @@
 def stockList(listOfArt, listOfCat)
   result = []
   listOfArt.map! { |pair| pair.split(" ") }
+  listOfArt.map! { |arr| [arr[0], arr[1].to_i] }
 
   p listOfArt
   listOfCat.each do |cat|
