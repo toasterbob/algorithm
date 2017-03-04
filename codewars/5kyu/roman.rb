@@ -15,4 +15,4 @@ def solution(number)
   end
   result
 
-end
+end 
