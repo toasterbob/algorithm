@@ -18,4 +18,4 @@ def balanceStatements(str)
       bad = "; Badly formed #{bad.length}: " + bad.join("")
     end
     "Buy: #{buy} Sell: #{sell}#{bad}"
-end
+end 
