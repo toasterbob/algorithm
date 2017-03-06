@@ -7,7 +7,7 @@ def numbers_with_digit_inside(x, d)
   end
   multiply = results.empty? ? 0 :  results.inject(&:*)
   [results.count, results.inject(0, &:+), multiply]
-end
+end 
 
 
 # def numbers_with_digit_inside(x, d)
