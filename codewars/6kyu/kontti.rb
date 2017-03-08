@@ -4,7 +4,7 @@ class String
 
     self.split(" ").each do |word|
       if /(?=.*[aeiouyAEIOUY])/.match(word)
-        trade = "kontii"
+        trade = "kontti"
         word.length.times do |i|
           break if i > 5 #bigger than kontti length
           trade[i], word[i] = word[i], trade[i]
