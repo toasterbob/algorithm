@@ -12,7 +12,7 @@ class String
         end
         result << "#{word}-#{trade}"
       else
-        result << word
+        result << word 
       end
     end
 
