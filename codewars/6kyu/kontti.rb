@@ -18,4 +18,4 @@ class String
 
     result.join(" ")
   end
-end
+end 
