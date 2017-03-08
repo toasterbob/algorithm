@@ -5,14 +5,14 @@ class String
     self.split(" ").each do |word|
       if /(?=.*[aeiouyAEIOUY])/.match(word)
         trade = "kontti"
+        breakpoint = nil
         word.length.times do |i|
-          break if i > 5 #bigger than kontti length
-          trade[i], word[i] = word[i], trade[i]
+          breakpoint = i
           break if %w(a e i o u y).include?(word[i])
         end
-        result << "#{word}-#{trade}"
+        result << "#{trade[0, 2]}#{word[2, word.length]}-#{word[0, breakpoint+1]}#{trade[2, trade.length]}"
       else
-        result << word 
+        result << word
       end
     end
 
