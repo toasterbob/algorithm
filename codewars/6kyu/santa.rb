@@ -14,7 +14,7 @@ GIFTS = {
 def gifts(number)
   toys = []
   GIFTS.keys.reverse.each do |price|
-    if number > price
+    if number >= price
       toys << GIFTS[price]
       number -= price
     end
