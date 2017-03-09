@@ -1,5 +1,6 @@
 def encode_str(string, shift)
    result = []
+   first_letter = string[0].downcase
    shift = shift % 26
    string.length.times do |i|
 
@@ -8,5 +9,5 @@ def encode_str(string, shift)
      end
    end
 
-   string = "#{string[0].downcase}#{string}"
+   string = "#{first_letter}#{string[0].downcase}#{string}"
 end
