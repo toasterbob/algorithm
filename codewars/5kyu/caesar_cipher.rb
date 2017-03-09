@@ -20,3 +20,10 @@ def decode(arr)
   first, second = arr[0].slice!(0,1), arr[0].slice!(0,1)
   arr.join("")
 end
+
+def decode(arr)
+    s = arr.join
+    prefix = s[0..1]
+    n = (prefix[1].ord - prefix[0].ord) % 26
+    encode_str(s[2..-1], -n).join[2..-1]
+end
