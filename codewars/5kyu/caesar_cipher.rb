@@ -9,7 +9,14 @@ def encode_str(string, shift)
      end
    end
    string = "#{first_letter}#{string[0].downcase}#{string}"
-   divide = (string.length / 5) + 1
+   divide = (string.length / 5)
+   divide += 1 unless divide * 5 == string.length
    5.times { result << string.slice!(0, divide) }
+   result.pop if result.last.length == 0
    result
+end
+
+def decode(arr)
+  first, second = arr[0].slice!(0,1), arr[0].slice!(0,1)
+  arr.join("")
 end
