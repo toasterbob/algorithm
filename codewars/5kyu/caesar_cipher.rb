@@ -22,7 +22,7 @@ def decode(arr)
   arr.join("")
   encode_str(arr.join, 26 - n).join[2..-1]
 end
-
+ 
 # def decode(arr)
 #     s = arr.join
 #     prefix = s[0..1]
