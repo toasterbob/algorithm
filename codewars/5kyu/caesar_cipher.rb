@@ -23,9 +23,9 @@ def decode(arr)
   encode(arr.join, n)
 end
 
-def decode(arr)
-    s = arr.join
-    prefix = s[0..1]
-    n = (prefix[1].ord - prefix[0].ord) % 26
-    encode_str(s[2..-1], -n).join[2..-1]
-end
+# def decode(arr)
+#     s = arr.join
+#     prefix = s[0..1]
+#     n = (prefix[1].ord - prefix[0].ord) % 26
+#     encode_str(s[2..-1], -n).join[2..-1]
+# end
