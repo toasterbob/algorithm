@@ -8,6 +8,8 @@ def encode_str(string, shift)
        shift.times { string[i] = (string[i].next)[0] }
      end
    end
-
    string = "#{first_letter}#{string[0].downcase}#{string}"
+   divide = (string.length / 5) + 1
+   5.times { result << string.slice!(0, divide) }
+   result
 end
