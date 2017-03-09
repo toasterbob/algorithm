@@ -18,7 +18,9 @@ end
 
 def decode(arr)
   first, second = arr[0].slice!(0,1), arr[0].slice!(0,1)
+  n = (second.ord - first.ord) % 26
   arr.join("")
+  encode(arr.join, n)
 end
 
 def decode(arr)
