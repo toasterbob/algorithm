@@ -46,7 +46,7 @@ def options_helper(options) #will return an array
           sub_option = options[(start + 1)..(stop - 1)] #so we've taken out the sub option now let's deal with it, minus the tags
           sub_option = options_helper(sub_option)
           keep_looping = false #break loop
-          options = options_helper(options[0...start] + sub_option + options[(stop + 1)..-1])
+          options = options[0...start] + sub_option + options[(stop + 1)..-1]
         end
         i += 1
       end
