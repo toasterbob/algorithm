@@ -3,6 +3,8 @@
 #so i think i need to look for the closing tag or if there is another { then i need to look for two closing tags, etc...
 #i'm going to look at each section parsed by spaces.  that's my intial approach
 
+#{I am|I'm} {working on|starting} this {online |}interview. I hope Cortx thinks I am {{very|extremely} qualified|great|awesome}{!|.}
+
 def sentenceWriter(input_string)
   result = []
   options = ""
@@ -30,7 +32,7 @@ def sentenceWriter(input_string)
 end
 
 def options_helper(options) #will return an array
-
+  return options unless options.include("{") || options.include("}") || options.include("|")
   #options = options[1..-2] #remove opening and closing {}
                            #this wouldn't work on something like {{very|extremely} qualified|great|awesome}{!|.}
                            #i need a more sophisticated parsing method
@@ -44,7 +46,7 @@ def options_helper(options) #will return an array
           sub_option = options[(start + 1)..(stop - 1)] #so we've taken out the sub option now let's deal with it, minus the tags
           sub_option = options_helper(sub_option)
           keep_looping = false #break loop
-          options = options_helper(options[0..start - 1] + sub_option + options[stop + 1..-1])
+          options = options_helper(options[0...start] + sub_option + options[(stop + 1)..-1])
         end
         i += 1
       end
