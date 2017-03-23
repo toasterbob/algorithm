@@ -1,6 +1,31 @@
+def sentenceMaker(input_string)
+  condition = input_string.include?("{") || input_string.include?("}") || input_string.include?("|")
+  return input_string unless condition #this will be the base case for recursively calling this function
 
+  if input_string.include("{")
+     input_string = choiceHelper(input_string) #going to use a helper method
+  end
 
+  sentenceMaker(input_string)
 
+end
+
+def choiceHelper(input_string)
+  i, start, stop = 0, 0, 0
+  loop = true
+  while loop
+    start = i if input_string[i] == "{"
+    if input_string[i] == "}" #if this is the case we have a choice section to breakdown
+      choice = input_string[(start + 1)...stop] #taking the choices minus "{" and "}"
+      choice = choice.split("|")
+      choice = choice[rand(choice.length)] #so now we've broken out a choice
+      input_string = input_string[0...start] + choice + [(stop + 1)..-1]
+      loop = false
+    end
+    i += 1
+  end
+  input_string
+end 
 
 #trying to understand the last input and how it works.  realized that {very|extremely} qualified is one choice
 #thinking about the best way to parse the results.  if i just look for { it doesn't take into account nested pieces
